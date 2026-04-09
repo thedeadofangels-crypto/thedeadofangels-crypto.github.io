@@ -65,11 +65,37 @@ nav {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-.nav-left img {
-  width: 32px;
-  height: 32px;
+/* 🔥 AJUSTE DE LOGOS */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Logo perro y gato */
+.logo-main {
+  width: 60px;
+  height: 60px;
   object-fit: cover;
   border-radius: 50%;
+}
+
+/* Logo PawStyle */
+.logo-rect {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ✨ EFECTO HOVER */
+.logo-main,
+.logo-rect {
+  transition: transform 0.3s ease;
+}
+
+.logo-main:hover,
+.logo-rect:hover {
+  transform: scale(1.1);
 }
 
 .nav-right { display: flex; gap: 30px; }
