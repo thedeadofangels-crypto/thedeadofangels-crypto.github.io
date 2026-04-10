@@ -69,22 +69,35 @@ nav {
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0px;
+}
+
+/* 🔥 LOGOS GRANDES SIN ROMPER NADA */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 35px; /* separación entre logos */
+  margin-left: 0px; /* los centra un poco */
 }
 
 /* Logo perro y gato */
 .logo-main {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 50%;
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+
+  transform: scale(2.2);
+  transform-origin: left center;
 }
 
 /* Logo PawStyle */
 .logo-rect {
-  width: 120px;
-  height: auto;
+  height: 55px;
+  width: auto;
   object-fit: contain;
+
+  transform: scale(2.8);
+  transform-origin: left center;
 }
 
 /* ✨ EFECTO HOVER */
@@ -93,9 +106,12 @@ nav {
   transition: transform 0.3s ease;
 }
 
-.logo-main:hover,
+.logo-main:hover {
+  transform: scale(2.4);
+}
+
 .logo-rect:hover {
-  transform: scale(1.1);
+  transform: scale(3);
 }
 
 .nav-right { display: flex; gap: 30px; }
@@ -162,7 +178,7 @@ section { scroll-margin-top: 100px; padding: 100px 20px; position: relative; }
 .add-to-cart { margin: 10px; }
 
 /* CTA */
-.cta { height: 400px; display: flex; align-items: center; padding: 0 10%; color: white; position: relative; background: url('https://codigosanluis.com/wp-content/uploads/2021/11/vestir-gato.jpg') center/cover no-repeat; }
+.cta { height: 400px; display: flex; align-items: center; padding: 0 10%; color: white; position: relative; background: url('https://admin.vsd.mx/wp-content/uploads/2025/08/Moda-pet-ropa-y-accesorios-para-perros-y-gatos-con-mucho-estilo.jpg') center/cover no-repeat; }
 .cta::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)); }
 .cta div { position: relative; z-index: 2; }
 .cta h2 { font-size: 2.5rem; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
@@ -269,28 +285,28 @@ footer a:hover { color: var(--naranja); text-shadow: 0 0 5px var(--naranja-claro
   <div class="grid">
     <div class="card" data-name="Polo Urban Dog" data-price="39.9">
       <img src="https://petfashion.pe/cdn/shop/products/polo-naranja-a-rayas-1-polo-a-rayas-gratis-400526_1024x1024.jpg?v=1630728471" alt="Polo Urban Dog" />
-      <h4>Polo Urban Dog</h4>
+      <h4>Colección de polos</h4>
       <div class="price">S/ 39.90</div>
       <button class="btn add-to-cart">Agregar al carrito</button>
     </div>
 
     <div class="card" data-name="Gorra Street Paw" data-price="25.9">
       <img src="https://img.kwcdn.com/product/aisc_image/fancy/opt/3f41977fdd5d4660a988ef43d27492ec-goods.jpeg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp" alt="Gorra Street Paw" />
-      <h4>Gorra Street Paw</h4>
+      <h4>Colección de gorras</h4>
       <div class="price">S/ 25.90</div>
       <button class="btn add-to-cart">Agregar al carrito</button>
     </div>
 
     <div class="card" data-name="Polo Casual Pet" data-price="35.9">
       <img src="https://m.media-amazon.com/images/I/71jh-YCw4CL.jpg" alt="Polo Casual Pet" />
-      <h4>Polo Casual Pet</h4>
+      <h4>Colección de polos</h4>
       <div class="price">S/ 35.90</div>
       <button class="btn add-to-cart">Agregar al carrito</button>
     </div>
 
     <div class="card" data-name="Gorra Basic Style" data-price="22.9">
       <img src="https://hotmart.s3.amazonaws.com/product_pictures/898171e0-2d13-45cc-b1ee-254b73de41eb/D_NQ_NP_836370CBT52914557534_122022V.jpg" alt="Gorra Basic Style" />
-      <h4>Gorra Basic Style</h4>
+      <h4>Colección de gorras</h4>
       <div class="price">S/ 22.90</div>
       <button class="btn add-to-cart">Agregar al carrito</button>
     </div>
