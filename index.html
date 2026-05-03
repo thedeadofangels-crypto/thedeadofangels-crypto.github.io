@@ -1,440 +1,335 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PawStyle</title>
-
-<!-- ✅ FAVICON -->
-<link rel="icon" href="https://i.ibb.co/v46WHcny/Whats-App-Image-2026-04-03-at-1-52-23-PM.jpg">
-
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<title>Digitech Consultores</title>
 
 <style>
-:root {
-  --naranja: #ff7a00;
-  --naranja-claro: #ffb366;
-  --marron: #5a3e2b;
-  --beige: #f5f1eb;
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #061521;
+    color: white;
+    overflow-x: hidden;
 }
 
-html { scroll-behavior: smooth; }
-body { margin: 0; font-family: 'Poppins', sans-serif; background: var(--beige); }
-
-  /* 🔥 TITULOS MEJORADOS */
-h1, h2, h3, h4 {
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 1px;
+/* INTRO */
+.intro {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 1s ease forwards;
+    animation-delay: 3s;
 }
 
-h2 {
-  font-size: 2.8rem;
-  font-weight: 700;
+.intro img {
+    width: 300px;
+    animation: logoIntro 2.2s ease-out forwards;
 }
 
-.products h2,
-.contact h2 {
-  text-transform: uppercase;
-  position: relative;
+@keyframes logoIntro {
+    0% { opacity: 0; transform: scale(0.8); filter: blur(20px); }
+    100% { opacity: 1; transform: scale(1); filter: blur(0); }
 }
 
-.products h2::after,
-.contact h2::after {
-  content: "";
-  width: 60px;
-  height: 4px;
-  background: var(--naranja);
-  display: block;
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-/* NAVBAR */
-nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  background: white; box-shadow: 0 2px 15px rgba(0,0,0,0.08); z-index: 1000;
-}
-.nav-container { max-width: 1200px; margin: auto; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: bold;
-  font-size: 2rem;
-  color: var(--naranja);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
 }
 
-/* 🔥 AJUSTE DE LOGOS */
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 0px;
+/* FONDO */
+#canvasFondo {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
 }
 
-/* 🔥 LOGOS GRANDES SIN ROMPER NADA */
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 35px; /* separación entre logos */
-  margin-left: 0px; /* los centra un poco */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: -2;
 }
 
-/* Logo perro y gato */
-.logo-main {
-  height: 55px;
-  width: auto;
-  object-fit: contain;
-
-  transform: scale(2.2);
-  transform-origin: left center;
+/* NAV */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
 }
 
-/* Logo PawStyle */
-.logo-rect {
-  height: 55px;
-  width: auto;
-  object-fit: contain;
-
-  transform: scale(2.8);
-  transform-origin: left center;
+/* BOTÓN */
+.btn {
+    background: linear-gradient(90deg, #00e0b8, #007bff);
+    padding: 12px 22px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
 }
-
-/* ✨ EFECTO HOVER */
-.logo-main,
-.logo-rect {
-  transition: transform 0.3s ease;
-}
-
-.logo-main:hover {
-  transform: scale(2.4);
-}
-
-.logo-rect:hover {
-  transform: scale(3);
-}
-
-.nav-right { display: flex; gap: 30px; }
-nav a { text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
-nav a:hover { color: var(--naranja); text-shadow: 0 0 5px var(--naranja-claro); }
-
-/* SCROLL MARGIN */
-section { scroll-margin-top: 100px; padding: 100px 20px; position: relative; }
 
 /* HERO */
 .hero {
-  position: relative; height: 100vh; display: flex; align-items: center; padding: 0 10%; color: white; overflow: hidden;
-  background: url('https://pampermut.com/blog/wp-content/uploads/2020/09/Ropa-para-perros-para-combatir-el-frio-de-fuzzyard-australia-blog-de-pampermut-1155x770.jpg') center/cover no-repeat;
-  background-position: center 30%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 80px;
+    gap: 40px;
 }
-.hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.5)); z-index: 1; }
-.hero-content { position: relative; z-index: 2; max-width: 600px; animation: fadeIn 1.2s ease; }
-.hero h1 { font-size: 4.5rem; margin: 0; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
-.btn {
-  display: inline-block; margin-top: 20px; background: white; color: var(--naranja); padding: 12px 25px; border-radius: 30px;
-  text-decoration: none; font-weight: bold; transition: 0.3s; box-shadow: 0 5px 15px rgba(255, 122, 0, 0.4); cursor: pointer;
+
+.hero img {
+    width: 480px;
+    border-radius: 15px;
 }
-.btn:hover { transform: scale(1.1); box-shadow: 0 8px 20px rgba(255,122,0,0.6); }
 
-/* FEATURES */
-.features { display: flex; justify-content: center; gap: 40px; background: linear-gradient(135deg, #f9f9f9, #f0f0f0); flex-wrap: wrap; padding: 100px 20px; }
-.feature { max-width: 250px; text-align: center; position: relative; padding: 25px 20px; border-radius: 25px; background: white; box-shadow: 0 10px 25px rgba(0,0,0,0.08); transition: transform 0.4s ease, box-shadow 0.4s ease; }
-.feature:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
-.feature-icon { font-size: 3.5rem; margin-bottom: 15px; transition: transform 0.4s ease; }
-.feature:hover .feature-icon { transform: scale(1.2); }
-.feature h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; }
-.feature p { font-size: 1rem; color: #555; }
-
-/* NOSOTROS */
-.about { background: white; }
-.about-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  flex-wrap: wrap;
+.hero-content {
+    max-width: 600px;
 }
-.about-text { flex: 1; }
-.about-text h2 { font-size: 2.5rem; color: var(--marron); }
-.about-img { flex: 1; text-align: center; }
-.about-img img { width: 100%; max-width: 400px; border-radius: 20px; }
 
-/* PRODUCTOS */
-.products { text-align: center; background: #fff8f0; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 30px; }
+/* TEXTOS */
+h1 {
+    font-size: 52px;
+}
 
-.card { background: white; border-radius: 20px; overflow: hidden; }
-.card img { width: 100%; height: 300px; object-fit: cover; }
+h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
 
+h2::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #00e0b8;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
 
-/* PRODUCTOS */
-.products { text-align: center; padding: 80px 20px; background: #fff8f0; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 30px; margin-top: 40px; }
-.card { background: white; border-radius: 25px; overflow: hidden; transition: transform 0.4s ease, box-shadow 0.4s ease; box-shadow: 0 5px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
-.card img { width: 100%; height: 400px; object-fit: cover; display: block; border-bottom: 5px solid; border-image: linear-gradient(to right, #ff7a00, #ffb366) 1; transition: transform 0.4s ease; }
-.card h4 { margin: 15px 10px 5px 10px; font-weight: 600; font-size: 1.1rem; }
-.price { color: var(--naranja); font-weight: bold; margin: 0 10px 15px 10px; font-size: 1.05rem; }
-.add-to-cart { margin: 10px; }
+p {
+    color: #cbd8e6;
+}
+
+/* SECCIONES */
+section {
+    padding: 100px 80px;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: rgba(255,255,255,0.06);
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #00e0b8;
+    box-shadow: 0 15px 40px rgba(0,224,184,0.2);
+}
+
+.card.destacada {
+    border: 1px solid #00e0b8;
+    transform: scale(1.05);
+}
 
 /* CTA */
-.cta { height: 400px; display: flex; align-items: center; padding: 0 10%; color: white; position: relative; background: url('https://admin.vsd.mx/wp-content/uploads/2025/08/Moda-pet-ropa-y-accesorios-para-perros-y-gatos-con-mucho-estilo.jpg') center/cover no-repeat; }
-.cta::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)); }
-.cta div { position: relative; z-index: 2; }
-.cta h2 { font-size: 2.5rem; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
-
-/* CONTACTO */
-.contact { text-align: center; background: white; }
-form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
-input, textarea { padding: 12px; border-radius: 8px; border: 1px solid #ccc; transition: 0.3s; }
-input:focus, textarea:focus { border-color: var(--naranja); box-shadow: 0 0 8px rgba(255,122,0,0.3); }
+.cta {
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+    padding: 120px 40px;
+}
 
 /* FOOTER */
-footer { background: #333; color: white; text-align: center; padding: 20px; }
-footer a { color: #fff; text-decoration: none; margin: 0 5px; font-weight: bold; transition: 0.3s; }
-footer a:hover { color: var(--naranja); text-shadow: 0 0 5px var(--naranja-claro); }
+footer {
+    padding: 40px;
+    text-align: center;
+    background: black;
+}
 
-/* ANIMACIONES */
-@keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+/* RESPONSIVE */
+@media(max-width:900px){
+    .hero {
+        flex-direction: column;
+    }
 
-/* ICONO CARRITO */
-#cart-icon { position: fixed; top: 25px; right: 40px; cursor:pointer; z-index:1001; font-size:1.8rem; }
-#cart-count { position:absolute; top:-10px; right:-10px; background:var(--naranja); color:white; border-radius:50%; padding:2px 6px; font-size:0.8rem; }
+    .cards {
+        grid-template-columns: 1fr;
+    }
 
-/* FONDO OSCURO */
-#cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 1000; display: none; }
-
-/* CARRITO DESLIZANTE */
-#cart { position: fixed; top: 0; right: -350px; width: 300px; height: 100%; background: white; border-radius: 15px 0 0 15px; box-shadow: -5px 0 30px rgba(0,0,0,0.2); padding: 20px; z-index: 1001; display: flex; flex-direction: column; transition: right 0.4s ease; overflow-y: auto; }
-#cart.open { right: 0; }
-.cart-item { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-.cart-item img { width: 40px; height: 40px; object-fit: cover; border-radius: 5px; margin-right: 8px; }
-.cart-item button { background: var(--naranja); border: none; color: white; border-radius: 5px; cursor: pointer; padding: 2px 6px; font-size: 0.8rem; }
-.cart-total { font-weight: bold; text-align: right; margin-top: 10px; }
+    section {
+        padding: 100px 40px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-container">
-    <div class="nav-left">
-  <!-- Imagen izquierda (perro y gato) -->
-  <img src="https://i.ibb.co/TMvMmgLc/Perro-y-gato-con-estilo.png" class="logo-main">
-
-  <!-- Imagen derecha (la cambias tú) -->
-  <img src="https://i.ibb.co/4xvN4K9/Logo-Paw-Style-con-huella-de-pata.png" class="logo-rect">
+<!-- INTRO -->
+<div class="intro">
+    <img src="https://i.ibb.co/1GtqN5VZ/Chat-GPT-Image-29-abr-2026-12-38-46-a-m.png">
 </div>
-    <div class="nav-right">
-      <a href="#home">Home</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#productos">Productos</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-  </div>
-</nav>
+
+<canvas id="canvasFondo"></canvas>
+
+<header>
+    <div>DIGI<span style="color:#00e0b8">TECH</span></div>
+    <a class="btn"
+    href="https://docs.google.com/forms/d/e/1FAIpQLScnCl0261pkoZ9aFvxB4JQFxECLI2qHrhV_uLGFPRQiG9cOEg/viewform"
+    target="_blank"
+    rel="noopener noreferrer">
+    Asesoría Gratis
+    </a>
+</header>
 
 <!-- HERO -->
-<section id="home" class="hero">
-  <div class="hero-content">
-    <h1>Tu mascota, tu estilo 🐾</h1>
-    <p>Ropa y accesorios que combinan comodidad y diseño para destacar en cada ocasión.</p>
-    <a href="#productos" class="btn">Ver colección</a>
-  </div>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Transformamos negocios con tecnología</h1>
+        <p>Automatización, IA y marketing digital para escalar tu empresa.</p>
+
+        <a class="btn"
+        href="https://docs.google.com/forms/d/e/1FAIpQLScnCl0261pkoZ9aFvxB4JQFxECLI2qHrhV_uLGFPRQiG9cOEg/viewform"
+        target="_blank"
+        rel="noopener noreferrer">
+        Quiero mi asesoría gratis
+        </a>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
 </section>
 
-<!-- FEATURES -->
-<section class="features">
-  <div class="feature"><div class="feature-icon">🐶</div><h3>Comodidad</h3><p>Prendas pensadas para su bienestar</p></div>
-  <div class="feature"><div class="feature-icon">👕</div><h3>Estilo</h3><p>Diseños modernos y urbanos</p></div>
-  <div class="feature"><div class="feature-icon">💰</div><h3>Accesibilidad</h3><p>Opciones prácticas y accesibles</p></div>
+<!-- SERVICIOS -->
+<section>
+    <h2>Servicios</h2>
+    <div class="cards">
+
+        <div class="card">
+            <div style="font-size:30px;">🚀</div>
+            <strong>Marketing Digital</strong>
+        </div>
+
+        <div class="card destacada">
+            <div style="font-size:30px;">🤖</div>
+            <strong>IA y Automatización</strong>
+        </div>
+
+        <div class="card">
+            <div style="font-size:30px;">📊</div>
+            <strong>Estrategia Digital</strong>
+        </div>
+
+    </div>
 </section>
 
-<!-- NOSOTROS -->
-<section id="nosotros" class="about">
+<!-- RESULTADOS -->
+<section>
+    <h2>Resultados</h2>
+    <div class="cards">
 
-  <!-- ✅ TÍTULO NUEVO -->
-  <h2 style="text-align:center; margin-bottom:40px; color: var(--marron);">
-    Sobre nosotros
-  </h2>
+        <div class="card">
+            <h3 style="color:#00e0b8;">+150</h3>
+            <p>Clientes satisfechos</p>
+        </div>
 
-  <div class="about-container">
+        <div class="card destacada">
+            <h3 style="color:#00e0b8;">+300%</h3>
+            <p>Crecimiento promedio</p>
+        </div>
 
-    <div class="about-text">
-      <h2>Más que accesorios, estilo para tu mascota</h2>
-      <p>
-        En PawStyle diseñamos prendas que combinan comodidad, estilo y accesibilidad,
-        pensadas para dueños que buscan mejorar la apariencia de sus mascotas.
-      </p>
-      <a href="#productos" class="btn">Ver productos</a>
+        <div class="card">
+            <h3 style="color:#00e0b8;">+5 años</h3>
+            <p>Experiencia</p>
+        </div>
+
     </div>
-
-    <div class="about-img">
-      <img src="https://www.chio-lecca.edu.pe/cdn/shop/articles/chio-lecca-blog-ropa-personalizada-para-mascotas.png?v=1741022130">
-    </div>
-
-  </div>
 </section>
-
-<!-- PRODUCTOS -->
-<section id="productos" class="products">
-  <h2>Nuestros productos</h2>
-  <p>Explora nuestra colección y encuentra el estilo perfecto para tu mascota</p>
-
-  <div class="grid">
-    <div class="card" data-name="Polo Urban Dog" data-price="39.9">
-      <img src="https://petfashion.pe/cdn/shop/products/polo-naranja-a-rayas-1-polo-a-rayas-gratis-400526_1024x1024.jpg?v=1630728471" alt="Polo Urban Dog" />
-      <h4>Colección de polos</h4>
-      <div class="price">S/ 39.90</div>
-      <button class="btn add-to-cart">Agregar al carrito</button>
-    </div>
-
-    <div class="card" data-name="Gorra Street Paw" data-price="25.9">
-      <img src="https://img.kwcdn.com/product/aisc_image/fancy/opt/3f41977fdd5d4660a988ef43d27492ec-goods.jpeg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp" alt="Gorra Street Paw" />
-      <h4>Colección de gorras</h4>
-      <div class="price">S/ 25.90</div>
-      <button class="btn add-to-cart">Agregar al carrito</button>
-    </div>
-
-    <div class="card" data-name="Polo Casual Pet" data-price="35.9">
-      <img src="https://m.media-amazon.com/images/I/71jh-YCw4CL.jpg" alt="Polo Casual Pet" />
-      <h4>Colección de polos</h4>
-      <div class="price">S/ 35.90</div>
-      <button class="btn add-to-cart">Agregar al carrito</button>
-    </div>
-
-    <div class="card" data-name="Gorra Basic Style" data-price="22.9">
-      <img src="https://hotmart.s3.amazonaws.com/product_pictures/898171e0-2d13-45cc-b1ee-254b73de41eb/D_NQ_NP_836370CBT52914557534_122022V.jpg" alt="Gorra Basic Style" />
-      <h4>Colección de gorras</h4>
-      <div class="price">S/ 22.90</div>
-      <button class="btn add-to-cart">Agregar al carrito</button>
-    </div>
-  </div>
-</section>
-
-<!-- ICONO Y CARRITO -->
-<div id="cart-icon">🛒 <span id="cart-count">0</span></div>
-<div id="cart-overlay"></div>
-<div id="cart">
-  <h3>Carrito de Compras</h3>
-  <div id="cart-items"></div>
-  <div class="cart-total">Total: S/ <span id="cart-total">0.00</span></div>
-</div>
 
 <!-- CTA -->
 <section class="cta">
-  <div>
-    <h2>Expresa su estilo</h2>
-    <p>Dale a tu mascota un look único que lo haga destacar.</p>
+    <h2>Empieza a crecer hoy</h2>
 
-    <!-- 🔥 NUEVO TEXTO -->
-    <p style="margin-top:10px; font-size:0.95rem; opacity:0.9;">
-      Diseña prendas únicas y haz que tu mascota sea el centro de todas las miradas 🐾
-    </p>
-
-    <!-- 🔥 BOTONES -->
-    <div style="margin-top:20px; display:flex; gap:15px; flex-wrap:wrap;">
-      
-      <a href="#contacto" class="btn">✨ Personalizar ahora</a>
-      
-      <a href="#productos" class="btn" style="background:transparent; color:white; border:2px solid white;">
-        Ver colección
-      </a>
-
-    </div>
-  </div>
+    <a class="btn"
+    href="https://docs.google.com/forms/d/e/1FAIpQLScnCl0261pkoZ9aFvxB4JQFxECLI2qHrhV_uLGFPRQiG9cOEg/viewform"
+    target="_blank"
+    rel="noopener noreferrer">
+    Agendar asesoría gratuita
+    </a>
 </section>
 
-<!-- CONTACTO -->
-<section id="contacto" class="contact">
-  <h2>Contáctanos</h2>
-  <p>¿Tienes dudas o quieres hacer un pedido? Contáctanos y te ayudamos de inmediato</p>
-
-  <!-- 👇 AQUÍ ESTÁ EL CAMBIO -->
-  <form action="https://forms.gle/jstFTj4XABhZAfJz8" target="_blank">
-    <input type="text" placeholder="Nombre" required />
-    <input type="email" placeholder="Correo" required />
-    <textarea placeholder="Mensaje"></textarea>
-    <button type="submit" class="btn">Ir al formulario</button>
-  </form>
-
-</section>
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 PawStyle</p>
-  <p>Síguenos en redes sociales</p>
-  <p><a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">TikTok</a></p>
+    <p>© 2026 Digitech Consultores</p>
 </footer>
 
 <script>
-// Carrito funcional
-let cart = [];
-const cartIcon = document.getElementById('cart-icon');
-const cartOverlay = document.getElementById('cart-overlay');
-const cartBox = document.getElementById('cart');
-const cartItemsContainer = document.getElementById('cart-items');
-const cartCount = document.getElementById('cart-count');
-const cartTotal = document.getElementById('cart-total');
+// quitar intro
+setTimeout(() => {
+    document.querySelector('.intro').style.display = 'none';
+}, 4000);
 
-// Mostrar / ocultar carrito
-cartIcon.addEventListener('click', () => {
-  cartBox.classList.toggle('open');
-  cartOverlay.style.display = cartBox.classList.contains('open') ? 'block' : 'none';
-});
-cartOverlay.addEventListener('click', () => {
-  cartBox.classList.remove('open');
-  cartOverlay.style.display = 'none';
-});
+// fondo animado
+const canvas = document.getElementById("canvasFondo");
+const ctx = canvas.getContext("2d");
 
-// Añadir productos
-document.querySelectorAll('.add-to-cart').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const card = btn.parentElement;
-    const name = card.dataset.name;
-    const price = parseFloat(card.dataset.price);
-    const img = card.querySelector('img').src;
+function resize(){
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+}
+resize();
 
-    const existing = cart.find(item => item.name === name);
-    if (existing) {
-      existing.quantity += 1;
-    } else {
-      cart.push({name, price, img, quantity: 1});
-    }
-    renderCart();
-  });
-});
+let particles = [];
 
-// Renderizar carrito
-function renderCart() {
-  cartItemsContainer.innerHTML = '';
-  let total = 0;
-  let totalCount = 0;
-  cart.forEach((item, index) => {
-    const itemTotal = item.price * item.quantity;
-    total += itemTotal;
-    totalCount += item.quantity;
-    const div = document.createElement('div');
-    div.className = 'cart-item';
-    div.innerHTML = `
-      <img src="${item.img}" alt="${item.name}">
-      <div style="flex:1;margin-left:10px;">
-        <strong>${item.name}</strong><br>
-        S/ ${item.price.toFixed(2)} x ${item.quantity} = S/ ${itemTotal.toFixed(2)}
-      </div>
-      <button onclick="removeItem(${index})">Eliminar</button>
-    `;
-    cartItemsContainer.appendChild(div);
-  });
-  cartCount.textContent = totalCount;
-  cartTotal.textContent = total.toFixed(2);
+for(let i=0;i<70;i++){
+    particles.push({
+        x: Math.random()*innerWidth,
+        y: Math.random()*innerHeight,
+        vx: (Math.random()-0.5)*0.2,
+        vy: (Math.random()-0.5)*0.2
+    });
 }
 
-// Eliminar producto
-function removeItem(index) {
-  cart.splice(index, 1);
-  renderCart();
+function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    particles.forEach(p=>{
+        p.x+=p.vx;
+        p.y+=p.vy;
+
+        if(p.x<0||p.x>canvas.width) p.vx*=-1;
+        if(p.y<0||p.y>canvas.height) p.vy*=-1;
+
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,2,0,Math.PI*2);
+        ctx.fillStyle="rgba(0,224,184,0.5)";
+        ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
 }
+
+draw();
+addEventListener("resize",resize);
 </script>
 
 </body>
