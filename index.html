@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <title>Digitech Consultores</title>
 
+<link rel="icon" href="https://i.ibb.co/1GtqN5VZ/Chat-GPT-Image-29-abr-2026-12-38-46-a-m.png">
+
 <style>
+html{scroll-behavior:smooth;}
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -57,23 +61,34 @@ body::before {
 
 /* NAV */
 header {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 40px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 25px 60px;
     position: fixed;
     width: 100%;
     z-index: 10;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(12px);
 }
 
-/* BOTÓN */
-.btn {
-    background: linear-gradient(90deg, #00e0b8, #007bff);
-    padding: 12px 22px;
-    border-radius: 10px;
-    color: white;
-    text-decoration: none;
+header div {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+header nav {
+    justify-self: center;
+}
+
+nav a{
+    margin:0 15px;
+    color:#ccc;
+    text-decoration:none;
+}
+
+nav a.active{
+    color:#00e0b8;
 }
 
 /* HERO */
@@ -83,48 +98,24 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 120px 80px;
-    gap: 40px;
 }
 
 .hero img {
-    width: 480px;
+    width: 40%;
     border-radius: 15px;
 }
 
-.hero-content {
-    max-width: 600px;
-}
-
 /* TEXTOS */
-h1 {
-    font-size: 52px;
-}
+h1 { font-size: 52px; }
 
 h2 {
     font-size: 36px;
     margin-bottom: 40px;
     text-align: center;
-    position: relative;
-}
-
-h2::after {
-    content: "";
-    width: 60px;
-    height: 3px;
-    background: #00e0b8;
-    display: block;
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
-
-p {
-    color: #cbd8e6;
 }
 
 /* SECCIONES */
-section {
-    padding: 100px 80px;
-}
+section { padding: 100px 80px; }
 
 /* CARDS */
 .cards {
@@ -135,22 +126,55 @@ section {
 
 .card {
     background: rgba(255,255,255,0.06);
-    padding: 30px;
+    padding: 25px;
     border-radius: 16px;
     text-align: center;
-    transition: 0.3s;
-    border: 1px solid rgba(255,255,255,0.08);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:220px;
+    transition:0.3s;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    border-color: #00e0b8;
-    box-shadow: 0 15px 40px rgba(0,224,184,0.2);
+    transform: translateY(-10px);
 }
 
-.card.destacada {
-    border: 1px solid #00e0b8;
-    transform: scale(1.05);
+.card img {
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* LEER MÁS */
+.more{display:none;}
+.card.active .more{display:block;}
+.read-btn{
+color:#00e0b8;
+cursor:pointer;
+font-size:14px;
+}
+
+/* BOTÓN PRO */
+.btn {
+    display: inline-block;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #00e0b8, #00a8ff);
+    color: white;
+    font-size: 18px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0,224,184,0.4);
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 40px rgba(0,224,184,0.8);
 }
 
 /* CTA */
@@ -169,167 +193,184 @@ footer {
 
 /* RESPONSIVE */
 @media(max-width:900px){
-    .hero {
-        flex-direction: column;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    section {
-        padding: 100px 40px;
-    }
+    .hero { flex-direction: column; }
+    .cards { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- INTRO -->
 <div class="intro">
-    <img src="https://i.ibb.co/1GtqN5VZ/Chat-GPT-Image-29-abr-2026-12-38-46-a-m.png">
+<img src="https://i.ibb.co/1GtqN5VZ/Chat-GPT-Image-29-abr-2026-12-38-46-a-m.png">
 </div>
 
 <canvas id="canvasFondo"></canvas>
 
 <header>
-    <div>DIGI<span style="color:#00e0b8">TECH</span></div>
-    <a class="btn"
-    href="https://docs.google.com/forms/d/e/1FAIpQLScnCl0261pkoZ9aFvxB4JQFxECLI2qHrhV_uLGFPRQiG9cOEg/viewform"
-    target="_blank"
-    rel="noopener noreferrer">
-    Asesoría Gratis
-    </a>
+<div>DIGI<span style="color:#00e0b8">TECH</span></div>
+
+<nav>
+<a href="#servicios">Servicios</a>
+<a href="#testimonios">Testimonios</a>
+<a href="#cta">Contacto</a>
+</nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-    <div class="hero-content">
-        <h1>Transformamos negocios con tecnología</h1>
-        <p>Automatización, IA y marketing digital para escalar tu empresa.</p>
-
-        <a class="btn"
-        href="https://docs.google.com/forms/d/e/1FAIpQLScnCl0261pkoZ9aFvxB4JQFxECLI2qHrhV_uLGFPRQiG9cOEg/viewform"
-        target="_blank"
-        rel="noopener noreferrer">
-        Quiero mi asesoría gratis
-        </a>
-    </div>
-
-    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+<div>
+<h1>Convierte tu negocio en una máquina de ventas</h1>
+<p>Automatización, IA y marketing digital para escalar tu empresa.</p>
+</div>
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
 </section>
 
 <!-- SERVICIOS -->
-<section>
-    <h2>Servicios</h2>
-    <div class="cards">
+<section id="servicios">
+<h2>Servicios</h2>
 
-        <div class="card">
-            <div style="font-size:30px;">🚀</div>
-            <strong>Marketing Digital</strong>
-        </div>
+<div class="cards">
 
-        <div class="card destacada">
-            <div style="font-size:30px;">🤖</div>
-            <strong>IA y Automatización</strong>
-        </div>
+<div class="card">
+<strong>🚀 Marketing Digital</strong>
+<p>Generamos clientes reales.</p>
+<div class="more">
+<p>Campañas optimizadas en Meta y Google Ads enfocadas en ventas.</p>
+</div>
+<span class="read-btn">Leer más</span>
+</div>
 
-        <div class="card">
-            <div style="font-size:30px;">📊</div>
-            <strong>Estrategia Digital</strong>
-        </div>
+<div class="card">
+<strong>🤖 Automatización</strong>
+<p>Ventas 24/7 sin esfuerzo.</p>
+<div class="more">
+<p>Sistemas automatizados para captar y cerrar clientes automáticamente.</p>
+</div>
+<span class="read-btn">Leer más</span>
+</div>
 
-    </div>
+<div class="card">
+<strong>🌐 Páginas Web</strong>
+<p>Diseño que convierte.</p>
+<div class="more">
+<p>Webs diseñadas para transformar visitas en clientes.</p>
+</div>
+<span class="read-btn">Leer más</span>
+</div>
+
+</div>
 </section>
 
-<!-- RESULTADOS -->
-<section>
-    <h2>Resultados</h2>
-    <div class="cards">
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+<h2>Testimonios</h2>
 
-        <div class="card">
-            <h3 style="color:#00e0b8;">+150</h3>
-            <p>Clientes satisfechos</p>
-        </div>
+<div class="cards">
 
-        <div class="card destacada">
-            <h3 style="color:#00e0b8;">+300%</h3>
-            <p>Crecimiento promedio</p>
-        </div>
+<div class="card">
+<img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:70px;border-radius:50%;">
+<p>★★★★★</p>
+<p>"Antes apenas teníamos consultas. En menos de 2 meses empezamos a recibir mensajes todos los días y cerramos más ventas de lo que esperábamos."</p>
+<strong>- Carlos M. (Negocio local)</strong>
+</div>
 
-        <div class="card">
-            <h3 style="color:#00e0b8;">+5 años</h3>
-            <p>Experiencia</p>
-        </div>
+<div class="card">
+<img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:70px;border-radius:50%;">
+<p>★★★★★</p>
+<p>"Lo que más me gustó fue la automatización. Ahora los clientes llegan solos y el sistema hace todo el seguimiento."</p>
+<strong>- Andrea R. (Emprendedora)</strong>
+</div>
 
-    </div>
+<div class="card">
+<img src="https://randomuser.me/api/portraits/men/65.jpg" style="width:70px;border-radius:50%;">
+<p>★★★★★</p>
+<p>"Probé otras agencias antes, pero aquí sí vi resultados reales. Pasamos de tener semanas vacías a agenda llena."</p>
+<strong>- Luis P. (Servicios profesionales)</strong>
+</div>
+
+</div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
-    <h2>Empieza a crecer hoy</h2>
+<section id="cta" class="cta">
+<h2>Empieza a crecer hoy</h2>
 
-    <a class="btn"
-    href="https://docs.google.com/forms/d/e/1FAIpQLScnCl0261pkoZ9aFvxB4JQFxECLI2qHrhV_uLGFPRQiG9cOEg/viewform"
-    target="_blank"
-    rel="noopener noreferrer">
-    Agendar asesoría gratuita
-    </a>
+<a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScnCl0261pkoZ9aFvxB4JQFxECLI2qHrhV_uLGFPRQiG9cOEg/viewform" target="_blank">
+🚀 Agendar asesoría gratuita
+</a>
+
 </section>
 
 <footer>
-    <p>© 2026 Digitech Consultores</p>
+<p>© 2026 Digitech Consultores</p>
 </footer>
 
 <script>
-// quitar intro
-setTimeout(() => {
-    document.querySelector('.intro').style.display = 'none';
-}, 4000);
+// NAV ACTIVO
+const sections=document.querySelectorAll("section[id]");
+const navLinks=document.querySelectorAll("nav a");
 
-// fondo animado
-const canvas = document.getElementById("canvasFondo");
-const ctx = canvas.getContext("2d");
+window.addEventListener("scroll",()=>{
+let current="";
+sections.forEach(section=>{
+const sectionTop=section.offsetTop-120;
+const sectionHeight=section.offsetHeight;
+if(window.scrollY>=sectionTop && window.scrollY<sectionTop+sectionHeight){
+current=section.getAttribute("id");
+}
+});
+navLinks.forEach(link=>{
+link.classList.remove("active");
+if(link.getAttribute("href")==="#"+current){
+link.classList.add("active");
+}
+});
+});
+
+// LEER MÁS
+document.querySelectorAll('.read-btn').forEach(btn=>{
+btn.onclick=()=>{
+btn.parentElement.classList.toggle('active');
+}
+});
+
+// INTRO
+setTimeout(()=>{document.querySelector('.intro').style.display='none';},4000);
+
+// FONDO
+const canvas=document.getElementById("canvasFondo");
+const ctx=canvas.getContext("2d");
 
 function resize(){
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
+canvas.width=innerWidth;
+canvas.height=innerHeight;
 }
 resize();
 
-let particles = [];
-
+let particles=[];
 for(let i=0;i<70;i++){
-    particles.push({
-        x: Math.random()*innerWidth,
-        y: Math.random()*innerHeight,
-        vx: (Math.random()-0.5)*0.2,
-        vy: (Math.random()-0.5)*0.2
-    });
+particles.push({
+x:Math.random()*innerWidth,
+y:Math.random()*innerHeight,
+vx:(Math.random()-0.5)*0.2,
+vy:(Math.random()-0.5)*0.2
+});
 }
 
 function draw(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    particles.forEach(p=>{
-        p.x+=p.vx;
-        p.y+=p.vy;
-
-        if(p.x<0||p.x>canvas.width) p.vx*=-1;
-        if(p.y<0||p.y>canvas.height) p.vy*=-1;
-
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,2,0,Math.PI*2);
-        ctx.fillStyle="rgba(0,224,184,0.5)";
-        ctx.fill();
-    });
-
-    requestAnimationFrame(draw);
+ctx.clearRect(0,0,canvas.width,canvas.height);
+particles.forEach(p=>{
+p.x+=p.vx;
+p.y+=p.vy;
+if(p.x<0||p.x>canvas.width)p.vx*=-1;
+if(p.y<0||p.y>canvas.height)p.vy*=-1;
+ctx.beginPath();
+ctx.arc(p.x,p.y,2,0,Math.PI*2);
+ctx.fillStyle="rgba(0,224,184,0.5)";
+ctx.fill();
+});
+requestAnimationFrame(draw);
 }
-
 draw();
-addEventListener("resize",resize);
 </script>
 
 </body>
