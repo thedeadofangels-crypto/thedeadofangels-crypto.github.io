@@ -175,6 +175,175 @@ section{
 padding:100px 80px;
 }
 
+/* PROCESO */
+#proceso{
+padding-top:40px;
+position:relative;
+}
+
+.process-title{
+text-align:center;
+max-width:850px;
+margin:auto;
+margin-bottom:70px;
+}
+
+.process-title h2{
+font-size:58px;
+margin-bottom:20px;
+font-weight:800;
+}
+
+.process-title h2 span{
+color:#00e0b8;
+}
+
+.process-title p{
+font-size:19px;
+line-height:1.8;
+color:#cfcfcf;
+}
+
+.mini-line{
+width:90px;
+height:5px;
+border-radius:30px;
+margin:auto;
+margin-bottom:25px;
+background:linear-gradient(90deg,#00e0b8,#00a8ff);
+box-shadow:0 0 25px rgba(0,224,184,0.5);
+}
+
+.process-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.process-card{
+position:relative;
+width:320px;
+padding:45px 30px;
+border-radius:28px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+text-align:center;
+overflow:hidden;
+transition:0.4s;
+box-shadow:0 0 30px rgba(0,0,0,0.25);
+}
+
+.process-card::before{
+content:"";
+position:absolute;
+width:220px;
+height:220px;
+background:radial-gradient(circle,
+rgba(0,224,184,0.18),
+transparent 70%);
+top:-80px;
+left:50%;
+transform:translateX(-50%);
+z-index:0;
+}
+
+.process-card:hover{
+transform:translateY(-12px);
+box-shadow:0 0 45px rgba(0,224,184,0.18);
+}
+
+.number-circle{
+position:absolute;
+top:20px;
+left:20px;
+width:58px;
+height:58px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+font-weight:bold;
+background:linear-gradient(135deg,#00e0b8,#00a8ff);
+box-shadow:0 0 25px rgba(0,224,184,0.5);
+}
+
+.process-icon{
+position:relative;
+z-index:1;
+width:140px;
+height:140px;
+margin:auto;
+margin-bottom:30px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(0,0,0,0.45);
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:
+0 0 40px rgba(0,224,184,0.15),
+inset 0 0 20px rgba(255,255,255,0.03);
+}
+
+.process-icon img{
+width:70px;
+height:70px;
+object-fit:contain;
+filter:drop-shadow(0 0 10px rgba(0,224,184,0.5));
+}
+
+.process-card h3{
+position:relative;
+z-index:1;
+font-size:44px;
+line-height:1.15;
+margin-bottom:20px;
+font-weight:800;
+}
+
+.process-card h3 span{
+color:#00e0b8;
+display:block;
+}
+
+.process-card p{
+position:relative;
+z-index:1;
+font-size:18px;
+line-height:1.8;
+color:#d4d4d4;
+}
+
+.line{
+width:70px;
+height:4px;
+border-radius:30px;
+margin:auto;
+margin-bottom:25px;
+background:#00e0b8;
+box-shadow:0 0 20px rgba(0,224,184,0.5);
+}
+
+.process-arrow{
+font-size:65px;
+color:#00e0b8;
+opacity:0.8;
+animation:arrowMove 1.8s infinite ease-in-out;
+}
+
+@keyframes arrowMove{
+0%,100%{
+transform:translateX(0);
+}
+50%{
+transform:translateX(10px);
+}
+}
+
 /* SERVICIOS */
 #servicios{
 padding-top:40px;
@@ -239,6 +408,109 @@ margin-bottom:20px;
 filter:drop-shadow(0 0 15px rgba(0,224,184,0.4));
 }
 
+/* NUEVOS SERVICIOS */
+.services-cards{
+margin-top:30px;
+}
+
+.service-card-new{
+position:relative;
+overflow:hidden;
+padding:45px 35px;
+text-align:left;
+background:rgba(5,15,22,0.82);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:28px;
+backdrop-filter:blur(10px);
+transition:0.4s;
+min-height:540px;
+}
+
+.service-card-new:hover{
+transform:translateY(-12px);
+box-shadow:0 0 45px rgba(0,224,184,0.18);
+}
+
+.service-glow{
+position:absolute;
+top:-120px;
+left:50%;
+transform:translateX(-50%);
+width:260px;
+height:260px;
+background:radial-gradient(circle,
+rgba(0,224,184,0.15),
+transparent 70%);
+pointer-events:none;
+}
+
+.service-top-icon{
+width:150px;
+height:150px;
+border-radius:50%;
+margin:auto;
+margin-bottom:30px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(0,0,0,0.45);
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:
+0 0 40px rgba(0,224,184,0.12),
+inset 0 0 20px rgba(255,255,255,0.03);
+position:relative;
+z-index:1;
+}
+
+.service-top-icon img{
+width:75px;
+height:75px;
+object-fit:contain;
+filter:drop-shadow(0 0 12px rgba(0,224,184,0.5));
+}
+
+.service-card-new h3{
+font-size:22px;
+line-height:1.4;
+margin-bottom:18px;
+text-align:left;
+}
+
+.service-desc{
+font-size:17px;
+line-height:1.8;
+color:#d3d3d3;
+margin-bottom:28px;
+}
+
+.service-line{
+width:100%;
+height:2px;
+background:rgba(0,224,184,0.4);
+margin-bottom:28px;
+box-shadow:0 0 18px rgba(0,224,184,0.3);
+}
+
+.service-list{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.service-list div{
+font-size:17px;
+color:#e5e5e5;
+display:flex;
+align-items:center;
+gap:12px;
+transition:0.3s;
+}
+
+.service-list div:hover{
+transform:translateX(6px);
+color:#00e0b8;
+}
+
 /* LEER MÁS */
 .more{
 display:none;
@@ -274,61 +546,233 @@ transform:translateY(-5px) scale(1.05);
 box-shadow:0 0 40px rgba(0,224,184,0.8);
 }
 
-/* CTA */
-.cta{
-text-align:center;
-background:rgba(0,0,0,0.4);
-padding:120px 40px;
+/* CONTACTO NUEVO */
+.contact-wrapper{
+display:grid;
+grid-template-columns:1.2fr 0.8fr;
+gap:35px;
+align-items:stretch;
 }
 
-.cta-box{
-max-width:700px;
-margin:auto;
-padding:60px 40px;
-border-radius:25px;
-background:rgba(255,255,255,0.06);
-backdrop-filter:blur(12px);
+.contact-left,
+.contact-right{
+background:rgba(5,15,22,0.82);
 border:1px solid rgba(255,255,255,0.08);
-box-shadow:0 0 40px rgba(0,0,0,0.4);
-animation:floatBox 4s ease-in-out infinite;
+border-radius:30px;
+padding:50px;
+backdrop-filter:blur(12px);
+box-shadow:0 0 35px rgba(0,0,0,0.35);
+position:relative;
+overflow:hidden;
 }
 
-.cta-box p{
-color:#cfcfcf;
-font-size:18px;
-line-height:1.7;
+.contact-left::before,
+.contact-right::before{
+content:"";
+position:absolute;
+width:300px;
+height:300px;
+background:radial-gradient(circle,
+rgba(0,224,184,0.12),
+transparent 70%);
+top:-120px;
+left:-80px;
+pointer-events:none;
+}
+
+.contact-badge{
+display:inline-block;
+padding:12px 22px;
+border-radius:40px;
+background:rgba(0,224,184,0.08);
+border:1px solid rgba(0,224,184,0.18);
+color:#00e0b8;
 margin-bottom:35px;
+font-size:15px;
 }
 
-.cta-benefits{
-display:flex;
-justify-content:center;
+.contact-left h2{
+font-size:72px;
+line-height:1.05;
+margin-bottom:25px;
+text-align:left;
+font-weight:800;
+}
+
+.contact-left h2 span{
+color:#00e0b8;
+}
+
+.contact-left p{
+font-size:22px;
+line-height:1.8;
+color:#d2d2d2;
+margin-bottom:45px;
+}
+
+.contact-benefits{
+display:grid;
+grid-template-columns:repeat(3,1fr);
 gap:18px;
-flex-wrap:wrap;
 margin-bottom:40px;
 }
 
-.cta-benefits div{
-background:rgba(0,224,184,0.08);
-padding:12px 20px;
-border-radius:30px;
-border:1px solid rgba(0,224,184,0.2);
-font-size:15px;
+.contact-benefit{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.06);
+padding:24px;
+border-radius:22px;
+font-size:17px;
+line-height:1.6;
 transition:0.3s;
 }
 
-.cta-benefits div:hover{
+.contact-benefit:hover{
 transform:translateY(-5px);
-background:rgba(0,224,184,0.15);
+border-color:rgba(0,224,184,0.25);
 }
 
-@keyframes floatBox{
-0%,100%{
-transform:translateY(0);
+.contact-bar{
+height:90px;
+border-radius:18px;
+background:linear-gradient(90deg,#00e0b8,#00a8ff);
+margin-bottom:28px;
+opacity:0.85;
+box-shadow:0 0 30px rgba(0,224,184,0.35);
 }
-50%{
-transform:translateY(-8px);
+
+.contact-secure{
+font-size:15px;
+color:#bdbdbd;
 }
+
+/* FORMULARIO */
+.contact-form-title{
+display:flex;
+align-items:center;
+gap:18px;
+margin-bottom:35px;
+}
+
+.contact-icon-circle{
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+background:rgba(0,224,184,0.08);
+border:1px solid rgba(0,224,184,0.2);
+color:#00e0b8;
+box-shadow:0 0 20px rgba(0,224,184,0.2);
+}
+
+.contact-form-title h3{
+font-size:40px;
+margin:0;
+}
+
+.contact-form-title p{
+margin:5px 0 0;
+color:#cfcfcf;
+font-size:18px;
+}
+
+.fake-input{
+width:100%;
+height:68px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.08);
+background:rgba(255,255,255,0.03);
+padding:0 22px;
+font-size:16px;
+color:white;
+margin-bottom:18px;
+outline:none;
+transition:0.3s;
+box-sizing:border-box;
+}
+
+.fake-input:focus{
+border-color:#00e0b8;
+box-shadow:0 0 18px rgba(0,224,184,0.2);
+}
+
+select.fake-input{
+appearance:none;
+}
+
+.fake-check{
+display:flex;
+gap:12px;
+align-items:flex-start;
+margin-top:5px;
+margin-bottom:25px;
+color:#cfcfcf;
+font-size:14px;
+line-height:1.7;
+}
+
+.fake-check input{
+margin-top:5px;
+transform:scale(1.2);
+accent-color:#00e0b8;
+}
+
+.contact-submit{
+display:flex;
+justify-content:center;
+align-items:center;
+height:72px;
+border-radius:22px;
+background:linear-gradient(135deg,#00e0b8,#00a8ff);
+text-decoration:none;
+color:white;
+font-size:22px;
+font-weight:bold;
+transition:0.35s;
+box-shadow:0 0 30px rgba(0,224,184,0.3);
+}
+
+.contact-submit:hover{
+transform:translateY(-5px);
+box-shadow:0 0 45px rgba(0,224,184,0.6);
+}
+
+.contact-note{
+margin-top:25px;
+text-align:center;
+font-size:14px;
+color:#bdbdbd;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+.contact-wrapper{
+grid-template-columns:1fr;
+}
+
+.contact-left h2{
+font-size:46px;
+text-align:center;
+}
+
+.contact-left p{
+font-size:18px;
+text-align:center;
+}
+
+.contact-benefits{
+grid-template-columns:1fr;
+}
+
+.contact-left,
+.contact-right{
+padding:35px 25px;
+}
+
 }
 
 /* TESTIMONIOS */
@@ -513,6 +957,7 @@ DIGI<span style="color:#00e0b8">TECH</span>
 </div>
 
 <nav>
+<a href="#proceso">Nosotros</a>
 <a href="#servicios">Servicios</a>
 <a href="#testimonios">Testimonios</a>
 <a href="#cta">Contacto</a>
@@ -550,88 +995,210 @@ src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
 
 </section>
 
+<!-- PROCESO -->
+<section id="proceso">
+
+<div class="process-title">
+
+<div class="mini-line"></div>
+
+<h2>
+¿Qué hacemos en <span>Digitech</span>?
+</h2>
+
+<p>
+Ayudamos a empresas y emprendedores a optimizar
+sus procesos digitales mediante estrategias modernas,
+automatización y crecimiento inteligente.
+</p>
+
+</div>
+
+<div class="process-container">
+
+<div class="process-card">
+
+<div class="number-circle">1</div>
+
+<div class="process-icon">
+<img src="https://cdn-icons-png.flaticon.com/512/2784/2784487.png">
+</div>
+
+<h3>
+Analizamos <span>tu negocio</span>
+</h3>
+
+<div class="line"></div>
+
+<p>
+Evaluamos la situación actual de tu empresa,
+sus procesos y presencia digital para identificar
+oportunidades de mejora.
+</p>
+
+</div>
+
+<div class="process-arrow">→</div>
+
+<div class="process-card">
+
+<div class="number-circle">2</div>
+
+<div class="process-icon">
+<img src="https://cdn-icons-png.flaticon.com/512/5956/5956592.png">
+</div>
+
+<h3>
+Detectamos <span>oportunidades</span>
+</h3>
+
+<div class="line"></div>
+
+<p>
+Identificamos áreas de crecimiento,
+automatización y optimización para mejorar
+los resultados de tu negocio.
+</p>
+
+</div>
+
+<div class="process-arrow">→</div>
+
+<div class="process-card">
+
+<div class="number-circle">3</div>
+
+<div class="process-icon">
+<img src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png">
+</div>
+
+<h3>
+Diseñamos <span>una estrategia</span>
+</h3>
+
+<div class="line"></div>
+
+<p>
+Creamos soluciones digitales alineadas
+a tus objetivos para ayudarte a crecer
+de manera más eficiente.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
 <!-- SERVICIOS -->
 <section id="servicios">
 
-<h2>Nuestros Servicios</h2>
+<div class="process-title">
 
-<p class="services-subtitle">
-Soluciones diseñadas para ayudarte a vender más,
-automatizar procesos y posicionar tu negocio en internet.
-</p>
+<div class="mini-line"></div>
 
-<div class="cards">
-
-<div class="card">
-
-<img
-class="service-icon"
-src="https://cdn-icons-png.flaticon.com/512/5968/5968874.png">
-
-<strong>🚀 Marketing Digital</strong>
+<h2>
+Nuestros <span style="color:#00e0b8">Servicios</span>
+</h2>
 
 <p>
-Generamos clientes reales con campañas enfocadas en resultados.
+Soluciones diseñadas para ayudarte a crecer,
+optimizar procesos y fortalecer tu presencia digital.
 </p>
 
-<div class="more">
-<p>
-Publicidad en Meta Ads, Google Ads y estrategias de conversión
-optimizadas para aumentar ventas.
-</p>
 </div>
 
-<span class="read-btn">Leer más</span>
+<div class="cards services-cards">
 
+<!-- CARD 1 -->
+<div class="card service-card-new">
+
+<div class="service-glow"></div>
+
+<div class="service-top-icon">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968874.png">
 </div>
 
-<div class="card">
+<h3>🚀 Marketing Digital</h3>
 
-<img
-class="service-icon"
-src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png">
-
-<strong>🤖 Automatización</strong>
-
-<p>
-Ventas automáticas 24/7 sin perder oportunidades.
+<p class="service-desc">
+Impulsamos tu presencia digital mediante estrategias
+de contenido, redes sociales y campañas enfocadas en resultados.
 </p>
 
-<div class="more">
-<p>
-Implementamos embudos automáticos, seguimiento inteligente
-y automatizaciones con IA.
+<div class="service-line"></div>
+
+<div class="service-list">
+
+<div>✔ Redes sociales</div>
+<div>✔ Estrategia de contenido</div>
+<div>✔ Posicionamiento digital</div>
+<div>✔ Campañas digitales</div>
+
+</div>
+
+</div>
+
+<!-- CARD 2 -->
+<div class="card service-card-new">
+
+<div class="service-glow"></div>
+
+<div class="service-top-icon">
+<img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png">
+</div>
+
+<h3>🤖 Automatización e IA</h3>
+
+<p class="service-desc">
+Implementamos herramientas inteligentes para automatizar
+procesos y optimizar la atención al cliente.
 </p>
+
+<div class="service-line"></div>
+
+<div class="service-list">
+
+<div>✔ Chatbots inteligentes</div>
+<div>✔ Automatización de procesos</div>
+<div>✔ Embudos automáticos</div>
+<div>✔ Herramientas IA</div>
+
 </div>
 
-<span class="read-btn">Leer más</span>
-
 </div>
 
-<div class="card">
+<!-- CARD 3 -->
+<div class="card service-card-new">
 
-<img
-class="service-icon"
-src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png">
+<div class="service-glow"></div>
 
-<strong>🌐 Páginas Web</strong>
+<div class="service-top-icon">
+<img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png">
+</div>
 
-<p>
-Diseños modernos creados para convertir visitas en clientes.
+<h3>🌐 Desarrollo Web</h3>
+
+<p class="service-desc">
+Creamos páginas modernas diseñadas para transmitir confianza
+y convertir visitas en clientes.
 </p>
 
-<div class="more">
-<p>
-Landing pages premium, webs corporativas y optimización UX/UI
-para maximizar conversiones.
-</p>
-</div>
+<div class="service-line"></div>
 
-<span class="read-btn">Leer más</span>
+<div class="service-list">
 
-</div>
+<div>✔ Landing pages premium</div>
+<div>✔ Diseño UX/UI</div>
+<div>✔ Webs corporativas</div>
+<div>✔ Optimización de conversión</div>
 
 </div>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- TESTIMONIOS -->
@@ -739,31 +1306,105 @@ a transmitir confianza."
 
 </section>
 
-<!-- CTA -->
+<!-- CONTACTO -->
 <section id="cta" class="cta">
 
-<div class="cta-box">
+<div class="contact-wrapper">
 
-<h2>Empieza a crecer hoy 🚀</h2>
+<!-- IZQUIERDA -->
+<div class="contact-left">
 
-<p>
-Descubre cómo automatizar tus ventas, atraer más clientes
-y escalar tu negocio con estrategias digitales modernas.
-</p>
-
-<div class="cta-benefits">
-<div>✔ Asesoría personalizada</div>
-<div>✔ Estrategia de crecimiento</div>
-<div>✔ Automatización con IA</div>
+<div class="contact-badge">
+🚀 Impulsa tu negocio
 </div>
 
-<a class="btn"
-href="https://docs.google.com/forms/d/e/1FAIpQLScnCl0261pkoZ9aFvxB4JQFxECLI2qHrhV_uLGFPRQiG9cOEg/viewform"
+<h2>
+Empieza a <span>crecer</span> hoy 🚀
+</h2>
+
+<p>
+Descubre cómo automatizar tus ventas,
+atraer más clientes y escalar tu negocio
+con estrategias digitales modernas.
+</p>
+
+<div class="contact-benefits">
+
+<div class="contact-benefit">
+✔ Asesoría personalizada
+</div>
+
+<div class="contact-benefit">
+📈 Estrategia de crecimiento
+</div>
+
+<div class="contact-benefit">
+🤖 Automatización con IA
+</div>
+
+</div>
+
+<div class="contact-bar"></div>
+
+<div class="contact-secure">
+🔒 Tu información está segura con nosotros.
+</div>
+
+</div>
+
+<!-- DERECHA -->
+<div class="contact-right">
+
+<div class="contact-form-title">
+
+<div class="contact-icon-circle">
+👤
+</div>
+
+<div>
+<h3>Déjanos tus datos</h3>
+<p>y un asesor se contactará contigo.</p>
+</div>
+
+</div>
+
+<input class="fake-input" type="text" placeholder="Nombre completo">
+
+<input class="fake-input" type="email" placeholder="Correo electrónico">
+
+<input class="fake-input" type="text" placeholder="Número de teléfono">
+
+<input class="fake-input" type="text" placeholder="Nombre de tu empresa (opcional)">
+
+<select class="fake-input">
+<option>¿En qué podemos ayudarte?</option>
+<option>Marketing Digital</option>
+<option>Automatización IA</option>
+<option>Desarrollo Web</option>
+</select>
+
+<div class="fake-check">
+<input type="checkbox">
+<span>
+Acepto la política de privacidad y el tratamiento
+de mis datos personales.
+</span>
+</div>
+
+<a
+class="contact-submit"
+href="https://docs.google.com/forms/d/e/1FAIpQLSfTeOvzs1Unq9UqxX_tXTRldTL-EqMnpgLBDhC4FY4ul4Vgqg/viewform"
 target="_blank">
 
-🚀 Agendar asesoría gratuita
+🚀 Enviar información
 
 </a>
+
+<div class="contact-note">
+🔒 Nunca compartiremos tus datos.
+</div>
+
+</div>
 
 </div>
 
