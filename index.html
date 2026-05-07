@@ -111,84 +111,56 @@ color:#00e0b8;
 
 /* HERO */
 .hero{
-min-height:100vh;
+min-height:85vh;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:120px 0 40px 80px;
+padding:120px 80px 40px;
 gap:60px;
-overflow:hidden;
-background:linear-gradient(to right,#061521 45%,#031019 100%);
-position:relative;
 }
 
 .hero-text{
 max-width:650px;
-z-index:2;
 }
 
-.hero-slider{
-position:relative;
-width:50%;
-height:85vh;
-overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:flex-end;
+.hero-badge{
+display:inline-block;
+padding:10px 18px;
+border-radius:30px;
+background:rgba(0,224,184,0.1);
+border:1px solid rgba(0,224,184,0.3);
+color:#00e0b8;
+margin-bottom:25px;
+font-size:14px;
+letter-spacing:1px;
 }
 
-.slider-track{
-display:flex;
-height:100%;
-animation:slideMove 18s infinite linear;
+.hero h1{
+font-size:68px;
+line-height:1.05;
+margin-bottom:25px;
+font-weight:800;
+max-width:700px;
 }
 
-.slider-track img{
-width:700px;
-height:100%;
-object-fit:cover;
-flex-shrink:0;
-animation:zoomImg 8s infinite alternate ease-in-out;
+.hero p{
+font-size:21px;
+line-height:1.7;
+color:#d0d0d0;
+margin-bottom:35px;
+max-width:620px;
 }
 
-/* DIFUMINADO IZQUIERDA */
-.hero-fade-left{
-position:absolute;
-left:0;
-top:0;
-width:220px;
-height:100%;
-background:linear-gradient(to right,#061521 0%,transparent 100%);
-z-index:3;
+.hero-img{
+width:48%;
+max-width:720px;
+border-radius:24px;
+box-shadow:0 0 50px rgba(0,0,0,0.5);
+transition:0.4s;
 }
 
-/* DIFUMINADO ABAJO */
-.hero-fade-bottom{
-position:absolute;
-left:0;
-bottom:0;
-width:100%;
-height:180px;
-background:linear-gradient(to top,#061521 0%,transparent 100%);
-z-index:3;
-}
-
-@keyframes slideMove{
-0%{
-transform:translateX(0);
-}
-100%{
-transform:translateX(-700px);
-}
-}
-
-@keyframes zoomImg{
-0%{
-transform:scale(1);
-}
-100%{
-transform:scale(1.08);
-}
+.hero-img:hover{
+transform:scale(1.03);
 }
 
 /* TEXTOS */
@@ -572,23 +544,9 @@ para hacer crecer tu empresa de manera predecible.
 
 </div>
 
-<!-- NUEVO SLIDER -->
-<div class="hero-slider">
-
-<div class="slider-track">
-
-<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
-
-<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
-
-<img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a">
-
-</div>
-
-<div class="hero-fade-left"></div>
-<div class="hero-fade-bottom"></div>
-
-</div>
+<img
+class="hero-img"
+src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
 
 </section>
 
