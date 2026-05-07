@@ -7,194 +7,521 @@
 <link rel="icon" href="https://i.ibb.co/1GtqN5VZ/Chat-GPT-Image-29-abr-2026-12-38-46-a-m.png">
 
 <style>
-html{scroll-behavior:smooth;}
+html{
+scroll-behavior:smooth;
+}
 
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #061521;
-    color: white;
-    overflow-x: hidden;
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:#061521;
+color:white;
+overflow-x:hidden;
 }
 
 /* INTRO */
-.intro {
-    position: fixed;
-    inset: 0;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    animation: fadeOut 1s ease forwards;
-    animation-delay: 3s;
+.intro{
+position:fixed;
+inset:0;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:fadeOut 1s ease forwards;
+animation-delay:3s;
 }
 
-.intro img {
-    width: 300px;
-    animation: logoIntro 2.2s ease-out forwards;
+.intro img{
+width:300px;
+animation:logoIntro 2.2s ease-out forwards;
 }
 
-@keyframes logoIntro {
-    0% { opacity: 0; transform: scale(0.8); filter: blur(20px); }
-    100% { opacity: 1; transform: scale(1); filter: blur(0); }
+@keyframes logoIntro{
+0%{
+opacity:0;
+transform:scale(0.8);
+filter:blur(20px);
+}
+100%{
+opacity:1;
+transform:scale(1);
+filter:blur(0);
+}
 }
 
-@keyframes fadeOut {
-    to { opacity: 0; visibility: hidden; }
+@keyframes fadeOut{
+to{
+opacity:0;
+visibility:hidden;
+}
 }
 
 /* FONDO */
-#canvasFondo {
-    position: fixed;
-    inset: 0;
-    z-index: -3;
+#canvasFondo{
+position:fixed;
+inset:0;
+z-index:-3;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-    z-index: -2;
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.55);
+z-index:-2;
 }
 
 /* NAV */
-header {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    padding: 25px 60px;
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(12px);
+header{
+display:grid;
+grid-template-columns:1fr auto 1fr;
+align-items:center;
+padding:25px 60px;
+position:fixed;
+width:100%;
+z-index:10;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(12px);
 }
 
-header div {
-    font-size: 26px;
-    font-weight: bold;
+header div{
+font-size:26px;
+font-weight:bold;
 }
 
-header nav {
-    justify-self: center;
+header nav{
+justify-self:center;
 }
 
 nav a{
-    margin:0 15px;
-    color:#ccc;
-    text-decoration:none;
+margin:0 15px;
+color:#ccc;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#00e0b8;
 }
 
 nav a.active{
-    color:#00e0b8;
+color:#00e0b8;
 }
 
 /* HERO */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 120px 80px;
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 0 40px 80px;
+gap:60px;
+overflow:hidden;
+background:linear-gradient(to right,#061521 45%,#031019 100%);
+position:relative;
 }
 
-.hero img {
-    width: 40%;
-    border-radius: 15px;
+.hero-text{
+max-width:650px;
+z-index:2;
+}
+
+.hero-slider{
+position:relative;
+width:50%;
+height:85vh;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:flex-end;
+}
+
+.slider-track{
+display:flex;
+height:100%;
+animation:slideMove 18s infinite linear;
+}
+
+.slider-track img{
+width:700px;
+height:100%;
+object-fit:cover;
+flex-shrink:0;
+animation:zoomImg 8s infinite alternate ease-in-out;
+}
+
+/* DIFUMINADO IZQUIERDA */
+.hero-fade-left{
+position:absolute;
+left:0;
+top:0;
+width:220px;
+height:100%;
+background:linear-gradient(to right,#061521 0%,transparent 100%);
+z-index:3;
+}
+
+/* DIFUMINADO ABAJO */
+.hero-fade-bottom{
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:180px;
+background:linear-gradient(to top,#061521 0%,transparent 100%);
+z-index:3;
+}
+
+@keyframes slideMove{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-700px);
+}
+}
+
+@keyframes zoomImg{
+0%{
+transform:scale(1);
+}
+100%{
+transform:scale(1.08);
+}
 }
 
 /* TEXTOS */
-h1 { font-size: 52px; }
-
-h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-    text-align: center;
+h2{
+font-size:42px;
+margin-bottom:20px;
+text-align:center;
 }
 
 /* SECCIONES */
-section { padding: 100px 80px; }
+section{
+padding:100px 80px;
+}
+
+/* SERVICIOS */
+#servicios{
+padding-top:40px;
+}
+
+.services-subtitle{
+text-align:center;
+max-width:750px;
+margin:auto;
+margin-top:-10px;
+margin-bottom:50px;
+color:#cfcfcf;
+font-size:18px;
+line-height:1.7;
+}
 
 /* CARDS */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 }
 
-.card {
-    background: rgba(255,255,255,0.06);
-    padding: 25px;
-    border-radius: 16px;
-    text-align: center;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    min-height:220px;
-    transition:0.3s;
+.card{
+background:rgba(255,255,255,0.06);
+padding:30px;
+border-radius:20px;
+text-align:center;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+min-height:320px;
+transition:0.35s;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 0 25px rgba(0,0,0,0.25);
 }
 
-.card:hover {
-    transform: translateY(-10px);
+.card:hover{
+transform:translateY(-12px) scale(1.02);
+box-shadow:0 0 35px rgba(0,224,184,0.15);
 }
 
-.card img {
-    margin-bottom: 10px;
+.card strong{
+font-size:22px;
+margin-bottom:15px;
+display:block;
 }
 
-.card p {
-    font-size: 15px;
-    line-height: 1.5;
+.card p{
+font-size:15px;
+line-height:1.7;
+color:#d7d7d7;
+}
+
+.service-icon{
+width:80px;
+height:80px;
+object-fit:contain;
+margin:auto;
+margin-bottom:20px;
+filter:drop-shadow(0 0 15px rgba(0,224,184,0.4));
 }
 
 /* LEER MÁS */
-.more{display:none;}
-.card.active .more{display:block;}
+.more{
+display:none;
+}
+
+.card.active .more{
+display:block;
+}
+
 .read-btn{
 color:#00e0b8;
 cursor:pointer;
 font-size:14px;
+margin-top:15px;
 }
 
-/* BOTÓN PRO */
-.btn {
-    display: inline-block;
-    padding: 16px 40px;
-    background: linear-gradient(135deg, #00e0b8, #00a8ff);
-    color: white;
-    font-size: 18px;
-    border-radius: 40px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 20px rgba(0,224,184,0.4);
+/* BOTÓN */
+.btn{
+display:inline-block;
+padding:16px 40px;
+background:linear-gradient(135deg,#00e0b8,#00a8ff);
+color:white;
+font-size:18px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+transition:all 0.3s ease;
+box-shadow:0 0 20px rgba(0,224,184,0.4);
 }
 
-.btn:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 0 40px rgba(0,224,184,0.8);
+.btn:hover{
+transform:translateY(-5px) scale(1.05);
+box-shadow:0 0 40px rgba(0,224,184,0.8);
 }
 
 /* CTA */
-.cta {
-    text-align: center;
-    background: rgba(0,0,0,0.4);
-    padding: 120px 40px;
+.cta{
+text-align:center;
+background:rgba(0,0,0,0.4);
+padding:120px 40px;
 }
 
-/* FOOTER */
-footer {
-    padding: 40px;
-    text-align: center;
-    background: black;
+.cta-box{
+max-width:700px;
+margin:auto;
+padding:60px 40px;
+border-radius:25px;
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 0 40px rgba(0,0,0,0.4);
+animation:floatBox 4s ease-in-out infinite;
+}
+
+.cta-box p{
+color:#cfcfcf;
+font-size:18px;
+line-height:1.7;
+margin-bottom:35px;
+}
+
+.cta-benefits{
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+margin-bottom:40px;
+}
+
+.cta-benefits div{
+background:rgba(0,224,184,0.08);
+padding:12px 20px;
+border-radius:30px;
+border:1px solid rgba(0,224,184,0.2);
+font-size:15px;
+transition:0.3s;
+}
+
+.cta-benefits div:hover{
+transform:translateY(-5px);
+background:rgba(0,224,184,0.15);
+}
+
+@keyframes floatBox{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
+}
+
+/* TESTIMONIOS */
+.testimonial-card{
+text-align:left;
+justify-content:flex-start;
+min-height:auto;
+padding:26px;
+position:relative;
+overflow:hidden;
+}
+
+.testimonial-card::before{
+content:"“";
+position:absolute;
+top:-10px;
+right:18px;
+font-size:90px;
+color:rgba(0,224,184,0.08);
+font-family:serif;
+}
+
+.testimonial-top{
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+}
+
+.testimonial-img{
+width:75px;
+height:75px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid rgba(0,224,184,0.5);
+}
+
+.testimonial-info strong{
+display:block;
+font-size:20px;
+margin-bottom:6px;
+}
+
+.client-tag{
+display:inline-block;
+padding:6px 12px;
+border-radius:20px;
+background:rgba(0,224,184,0.12);
+color:#00e0b8;
+font-size:12px;
+margin-top:4px;
+margin-bottom:10px;
+}
+
+.stars{
+color:#FFD700;
+font-size:18px;
+letter-spacing:2px;
+}
+
+.testimonial-card p{
+font-size:15px;
+line-height:1.8;
+color:#d9d9d9;
+margin-top:10px;
+}
+
+/* MÉTRICAS */
+.review-metrics{
+display:flex;
+gap:12px;
+margin-top:18px;
+flex-wrap:wrap;
+}
+
+.review-metrics span{
+font-size:12px;
+padding:7px 12px;
+border-radius:20px;
+background:rgba(255,255,255,0.05);
+color:#bfbfbf;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+/* REDES */
+.socials{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.social-btn{
+display:flex;
+align-items:center;
+gap:12px;
+padding:12px 18px;
+border-radius:50px;
+text-decoration:none;
+color:#d8d8d8;
+font-weight:600;
+background:none;
+border:none;
+transition:0.3s;
+backdrop-filter:none;
+box-shadow:none;
+}
+
+.social-btn:hover{
+transform:translateY(-3px);
+color:#00e0b8;
+background:none;
+box-shadow:none;
+}
+
+.social-btn img{
+width:24px;
+height:24px;
+object-fit:contain;
+opacity:0.9;
+}/* FOOTER */
+footer{
+padding:40px;
+text-align:center;
+background:black;
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
-    .hero { flex-direction: column; }
-    .cards { grid-template-columns: 1fr; }
+
+.hero{
+flex-direction:column;
+text-align:center;
+padding:120px 25px 30px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.hero-img{
+width:100%;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+header{
+padding:20px;
+}
+
+section{
+padding:80px 25px;
+}
+
+.cta-box{
+padding:40px 25px;
+}
+
 }
 </style>
 </head>
@@ -208,54 +535,142 @@ footer {
 <canvas id="canvasFondo"></canvas>
 
 <header>
-<div>DIGI<span style="color:#00e0b8">TECH</span></div>
+
+<div>
+DIGI<span style="color:#00e0b8">TECH</span>
+</div>
 
 <nav>
 <a href="#servicios">Servicios</a>
 <a href="#testimonios">Testimonios</a>
 <a href="#cta">Contacto</a>
 </nav>
+
 </header>
 
+<!-- HERO -->
 <section class="hero">
-<div>
-<h1>Convierte tu negocio en una máquina de ventas</h1>
-<p>Automatización, IA y marketing digital para escalar tu empresa.</p>
+
+<div class="hero-text">
+
+<span class="hero-badge">
+🚀 Agencia de Automatización & IA
+</span>
+
+<h1>
+Transformamos negocios comunes en marcas que venden todos los días
+</h1>
+
+<p>
+Automatización inteligente, marketing digital y sistemas con IA
+para hacer crecer tu empresa de manera predecible.
+</p>
+
+<a href="#cta" class="btn">
+🔥 Quiero más clientes
+</a>
+
 </div>
+
+<!-- NUEVO SLIDER -->
+<div class="hero-slider">
+
+<div class="slider-track">
+
 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
+
+<img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a">
+
+</div>
+
+<div class="hero-fade-left"></div>
+<div class="hero-fade-bottom"></div>
+
+</div>
+
 </section>
 
 <!-- SERVICIOS -->
 <section id="servicios">
-<h2>Servicios</h2>
+
+<h2>Nuestros Servicios</h2>
+
+<p class="services-subtitle">
+Soluciones diseñadas para ayudarte a vender más,
+automatizar procesos y posicionar tu negocio en internet.
+</p>
 
 <div class="cards">
 
 <div class="card">
+
+<img
+class="service-icon"
+src="https://cdn-icons-png.flaticon.com/512/5968/5968874.png">
+
 <strong>🚀 Marketing Digital</strong>
-<p>Generamos clientes reales.</p>
+
+<p>
+Generamos clientes reales con campañas enfocadas en resultados.
+</p>
+
 <div class="more">
-<p>Campañas optimizadas en Meta y Google Ads enfocadas en ventas.</p>
+<p>
+Publicidad en Meta Ads, Google Ads y estrategias de conversión
+optimizadas para aumentar ventas.
+</p>
 </div>
+
 <span class="read-btn">Leer más</span>
+
 </div>
 
 <div class="card">
+
+<img
+class="service-icon"
+src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png">
+
 <strong>🤖 Automatización</strong>
-<p>Ventas 24/7 sin esfuerzo.</p>
+
+<p>
+Ventas automáticas 24/7 sin perder oportunidades.
+</p>
+
 <div class="more">
-<p>Sistemas automatizados para captar y cerrar clientes automáticamente.</p>
+<p>
+Implementamos embudos automáticos, seguimiento inteligente
+y automatizaciones con IA.
+</p>
 </div>
+
 <span class="read-btn">Leer más</span>
+
 </div>
 
 <div class="card">
+
+<img
+class="service-icon"
+src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png">
+
 <strong>🌐 Páginas Web</strong>
-<p>Diseño que convierte.</p>
+
+<p>
+Diseños modernos creados para convertir visitas en clientes.
+</p>
+
 <div class="more">
-<p>Webs diseñadas para transformar visitas en clientes.</p>
+<p>
+Landing pages premium, webs corporativas y optimización UX/UI
+para maximizar conversiones.
+</p>
 </div>
+
 <span class="read-btn">Leer más</span>
+
 </div>
 
 </div>
@@ -263,45 +678,169 @@ footer {
 
 <!-- TESTIMONIOS -->
 <section id="testimonios">
+
 <h2>Testimonios</h2>
+
+<p class="services-subtitle">
+Empresas y emprendedores que ya están creciendo con nuestras estrategias digitales.
+</p>
 
 <div class="cards">
 
-<div class="card">
-<img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:70px;border-radius:50%;">
-<p>★★★★★</p>
-<p>"Antes apenas teníamos consultas. En menos de 2 meses empezamos a recibir mensajes todos los días y cerramos más ventas de lo que esperábamos."</p>
-<strong>- Carlos M. (Negocio local)</strong>
-</div>
+<div class="card testimonial-card">
 
-<div class="card">
-<img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:70px;border-radius:50%;">
-<p>★★★★★</p>
-<p>"Lo que más me gustó fue la automatización. Ahora los clientes llegan solos y el sistema hace todo el seguimiento."</p>
-<strong>- Andrea R. (Emprendedora)</strong>
-</div>
+<div class="testimonial-top">
 
-<div class="card">
-<img src="https://randomuser.me/api/portraits/men/65.jpg" style="width:70px;border-radius:50%;">
-<p>★★★★★</p>
-<p>"Probé otras agencias antes, pero aquí sí vi resultados reales. Pasamos de tener semanas vacías a agenda llena."</p>
-<strong>- Luis P. (Servicios profesionales)</strong>
+<img 
+class="testimonial-img"
+src="https://randomuser.me/api/portraits/men/32.jpg">
+
+<div class="testimonial-info">
+<strong>Carlos M.</strong>
+<p class="client-tag">E-commerce</p>
+<div class="stars">★★★★★</div>
 </div>
 
 </div>
+
+<p>
+"Antes apenas teníamos consultas. En menos de 2 meses empezamos
+a recibir mensajes todos los días y cerramos más ventas gracias
+a las campañas y automatizaciones implementadas."
+</p>
+
+<div class="review-metrics">
+<span>+180% clientes</span>
+<span>2 meses</span>
+<span>Automatización IA</span>
+</div>
+
+</div>
+
+<div class="card testimonial-card">
+
+<div class="testimonial-top">
+
+<img 
+class="testimonial-img"
+src="https://randomuser.me/api/portraits/women/44.jpg">
+
+<div class="testimonial-info">
+<strong>Andrea R.</strong>
+<p class="client-tag">Restaurante</p>
+<div class="stars">★★★★★</div>
+</div>
+
+</div>
+
+<p>
+"Lo que más me gustó fue la automatización.
+Ahora los clientes llegan solos y el seguimiento
+es mucho más profesional."
+</p>
+
+<div class="review-metrics">
+<span>+120 reservas</span>
+<span>30 días</span>
+<span>Meta Ads</span>
+</div>
+
+</div>
+
+<div class="card testimonial-card">
+
+<div class="testimonial-top">
+
+<img 
+class="testimonial-img"
+src="https://randomuser.me/api/portraits/men/65.jpg">
+
+<div class="testimonial-info">
+<strong>Luis P.</strong>
+<p class="client-tag">Servicios</p>
+<div class="stars">★★★★★</div>
+</div>
+
+</div>
+
+<p>
+"Pasamos de tener semanas vacías
+a agenda llena. La web nueva ayudó muchísimo
+a transmitir confianza."
+</p>
+
+<div class="review-metrics">
+<span>+90 leads</span>
+<span>Web Premium</span>
+<span>UX/UI</span>
+</div>
+
+</div>
+
+</div>
+
 </section>
 
+<!-- CTA -->
 <section id="cta" class="cta">
-<h2>Empieza a crecer hoy</h2>
 
-<a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScnCl0261pkoZ9aFvxB4JQFxECLI2qHrhV_uLGFPRQiG9cOEg/viewform" target="_blank">
+<div class="cta-box">
+
+<h2>Empieza a crecer hoy 🚀</h2>
+
+<p>
+Descubre cómo automatizar tus ventas, atraer más clientes
+y escalar tu negocio con estrategias digitales modernas.
+</p>
+
+<div class="cta-benefits">
+<div>✔ Asesoría personalizada</div>
+<div>✔ Estrategia de crecimiento</div>
+<div>✔ Automatización con IA</div>
+</div>
+
+<a class="btn"
+href="https://docs.google.com/forms/d/e/1FAIpQLScnCl0261pkoZ9aFvxB4JQFxECLI2qHrhV_uLGFPRQiG9cOEg/viewform"
+target="_blank">
+
 🚀 Agendar asesoría gratuita
+
 </a>
+
+</div>
 
 </section>
 
 <footer>
+
 <p>© 2026 Digitech Consultores</p>
+
+<div class="socials">
+
+<a 
+class="social-btn"
+href="https://www.facebook.com/profile.php?id=61588836244421"
+target="_blank">
+
+<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+
+Facebook
+
+</a>
+
+<a 
+class="social-btn"
+href="https://www.instagram.com/digitech.consultores26/"
+target="_blank">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+
+Instagram
+
+</a>
+
+</div>
+
 </footer>
 
 <script>
@@ -310,66 +849,107 @@ const sections=document.querySelectorAll("section[id]");
 const navLinks=document.querySelectorAll("nav a");
 
 window.addEventListener("scroll",()=>{
+
 let current="";
+
 sections.forEach(section=>{
+
 const sectionTop=section.offsetTop-120;
 const sectionHeight=section.offsetHeight;
-if(window.scrollY>=sectionTop && window.scrollY<sectionTop+sectionHeight){
+
+if(window.scrollY>=sectionTop &&
+window.scrollY<sectionTop+sectionHeight){
+
 current=section.getAttribute("id");
+
 }
+
 });
+
 navLinks.forEach(link=>{
+
 link.classList.remove("active");
+
 if(link.getAttribute("href")==="#"+current){
+
 link.classList.add("active");
+
 }
+
 });
+
 });
 
 // LEER MÁS
 document.querySelectorAll('.read-btn').forEach(btn=>{
+
 btn.onclick=()=>{
+
 btn.parentElement.classList.toggle('active');
+
 }
+
 });
 
 // INTRO
-setTimeout(()=>{document.querySelector('.intro').style.display='none';},4000);
+setTimeout(()=>{
+
+document.querySelector('.intro').style.display='none';
+
+},4000);
 
 // FONDO
 const canvas=document.getElementById("canvasFondo");
 const ctx=canvas.getContext("2d");
 
 function resize(){
+
 canvas.width=innerWidth;
 canvas.height=innerHeight;
+
 }
+
 resize();
 
 let particles=[];
+
 for(let i=0;i<70;i++){
+
 particles.push({
+
 x:Math.random()*innerWidth,
 y:Math.random()*innerHeight,
 vx:(Math.random()-0.5)*0.2,
 vy:(Math.random()-0.5)*0.2
+
 });
+
 }
 
 function draw(){
+
 ctx.clearRect(0,0,canvas.width,canvas.height);
+
 particles.forEach(p=>{
+
 p.x+=p.vx;
 p.y+=p.vy;
+
 if(p.x<0||p.x>canvas.width)p.vx*=-1;
 if(p.y<0||p.y>canvas.height)p.vy*=-1;
+
 ctx.beginPath();
 ctx.arc(p.x,p.y,2,0,Math.PI*2);
+
 ctx.fillStyle="rgba(0,224,184,0.5)";
 ctx.fill();
+
 });
+
 requestAnimationFrame(draw);
+
 }
+
 draw();
 </script>
 
